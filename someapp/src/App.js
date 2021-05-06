@@ -1,20 +1,23 @@
 import React, {useState} from 'react'
 
 const App = () => {
-    const [counter, setCounter] = useState(0)
-    const incByOne = ()=>setCounter(counter+1)
-    const setToZero = ()=>setCounter(0)
+    const [left, setLeft] = useState(0);
+    const [right, setRight] = useState(0);
+
+    const incOne = (v, f) => ()=> f(v+1)
 
     return (
-        <>
-            <div>{counter}</div>
-            <button onClick={incByOne}>
-                increase
+        <div>
+            {left}
+            <button onClick={incOne(left,setLeft)}>
+                left
             </button>
-            <button onClick={setToZero}>
-                zero
+            <button onClick={incOne(right,setRight)}>
+                right
             </button>
-        </>
+            {right}
+
+        </div>
     )
 }
 export default App
