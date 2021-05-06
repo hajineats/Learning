@@ -1,5 +1,13 @@
 import React, {useState} from 'react'
 
+const Button = ({handler, name}) =>{
+    return(
+        <button onClick={handler}>
+            {name}
+        </button>
+    )
+}
+
 const App = () => {
     const [clicks, setClicks] = useState(
         {
@@ -16,12 +24,8 @@ const App = () => {
     return (
         <>
             {clicks.left}
-            <button onClick={handleLeftClick}>
-                left
-            </button>
-            <button onClick={handleRightClick}>
-                right
-            </button>
+            <Button handler={handleLeftClick} name="left" />
+            <Button handler={handleRightClick} name="right" />
             {clicks.right}
         </>
     )
