@@ -1,19 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Hello = (props)=>{
-    return (
-        <div>
-            <p>Hello {props.name}</p>
-        </div>
-    )
-}
 const App = () => {
+    const [counter, setCounter] = useState(0)
+    const incByOne = ()=>setCounter(counter+1)
+    const setToZero = ()=>setCounter(0)
+
     return (
-        <div>
-            <h1>Greetings</h1>
-            <Hello name="George"/>
-            <Hello name="Daisy" />
-        </div>
+        <>
+            <div>{counter}</div>
+            <button onClick={incByOne}>
+                increase
+            </button>
+            <button onClick={setToZero}>
+                zero
+            </button>
+        </>
     )
 }
 export default App
