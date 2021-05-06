@@ -1,9 +1,15 @@
 import React from 'react'
-const App = ({notes}) => {
+import Note from './components/Note'
+
+
+const App = (props) => {
+    const {notes} = props
     return (
         <div>
             <ul>
-                {notes.map(note=><li>{note.content}</li>)}
+                {notes.map(note=>
+                    <Note key={note.id} note={note}/>
+                )}
             </ul>
         </div>
     )
