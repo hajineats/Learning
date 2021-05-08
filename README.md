@@ -1,5 +1,5 @@
 # Learning
-Main milestones:
+Main milestones achieved so far:
 - familiarising with react functional component
 - understanding useeffect
 - understanding form
